@@ -9,9 +9,30 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "webpack-dev-server",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "extract-loader": "^3.0.0",
+    "file-loader": "^2.0.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strama4/bloc-chat-react.git"
+  },
+  "author": "Luke Strama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strama4/bloc-chat-react/issues"
+  },
+  "homepage": "https://github.com/strama4/bloc-chat-react#readme"
 }
