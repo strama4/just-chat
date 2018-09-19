@@ -21,10 +21,12 @@ class RoomList extends Component {
 
     createRoom = (event) => {
         event.preventDefault();
-        const roomName = document.getElementById('room-name').value;
+        const roomName = document.getElementById('room-name');
         this.roomsRef.push({
-            name: roomName
+            name: roomName.value
         })
+        roomName.value = "";
+
     }
     
     render() {
