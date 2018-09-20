@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rmwc/drawer": "^2.1.3",
+    "@rmwc/list": "^2.1.3",
     "firebase": "^5.5.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
