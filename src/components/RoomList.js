@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class RoomList extends Component {
     constructor(props) {
@@ -28,13 +29,13 @@ class RoomList extends Component {
         roomName.value = "";
 
     }
-    
+
     render() {
         return (
             <section>
                 <nav className="rooms-list">
                     {this.state.rooms.map((room) => {
-                        return <p key={room.key}>{room.name}</p>
+                        return <div key={room.key} onClick={() => this.props.setCurrentRoom(room)}><p>{room.name}</p></div>
                     })                 
                     }
                 </nav>
