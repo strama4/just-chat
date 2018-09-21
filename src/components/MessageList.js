@@ -22,9 +22,6 @@ class MessageList extends Component {
     render() {
         const currentRoomKey = this.props.currentRoom.key;
         const filteredMessages = this.state.messages.filter(message => message.roomId == currentRoomKey);
-        console.log(this.state.messages)
-        console.log(filteredMessages)
-        console.log(currentRoomKey)
 
         return (
             <section id="messages-list">

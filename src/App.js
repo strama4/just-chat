@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import RoomList from './components/RoomList.js';
 import MessageList from './components/MessageList.js';
 import Landing from './components/Landing.js';
+import User from './components/User.js';
 
 import {
     Drawer,
@@ -39,18 +40,30 @@ class App extends Component {
         super(props);
 
         this.state = {
-          currentRoom: ''
+          currentRoom: '',
+          user: 'Guest'
         }
     }
 
     setCurrentRoom = (room) => {
-      this.setState({ currentRoom: room });
+        this.setState({ currentRoom: room });
     }
+
+    setUser = (user) => {
+        this.setState({ user: user})
+        
+    }
+
 
     render() {
         return (
             <div className="App">
                 <Drawer>
+                    <User 
+                        firebase={firebase} 
+                        handleUserButtonClick={this.handleUserButtonClick} 
+                        setUser={this.setUser}
+                        user={this.state.user}/>
                     <RoomList firebase={firebase} setCurrentRoom={this.setCurrentRoom}/>
                 </Drawer>
                 <MessageList firebase={firebase} currentRoom={this.state.currentRoom} />
