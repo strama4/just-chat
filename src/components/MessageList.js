@@ -15,20 +15,28 @@ class MessageList extends Component {
         this.messagesRef.on('child_added', snapshot => {
             const message = snapshot.val();
             message.key = snapshot.key;
-            message.sentAt = this.props.firebase.database.ServerValue.TIMESTAMP;
             this.setState({ messages: this.state.messages.concat((message)) })
         })
     }
 
     render() {
+        const currentRoomKey = this.props.currentRoom.key;
+        const filteredMessages = this.state.messages.filter(message => message.roomId == currentRoomKey);
+        console.log(this.state.messages)
+        console.log(filteredMessages)
+        console.log(currentRoomKey)
+
         return (
             <section id="messages-list">
-                <div className="messages-list">
-                    <h3>{this.props.currentRoom.name}</h3>
-                    {console.log(this.props.currentRoom.name)}
-                    {this.state.messages.filter(message => message.roomId === this.props.currentRoom.key).map(message =>
-                        <p>{message.content}</p>)}
-                </div>
+                    <h2>{this.props.currentRoom.name}</h2>
+                    {filteredMessages.map((message) => {
+                        return (
+                            <div key={this.state.messages.indexOf(message)}>
+                                <h3>{message.username}:</h3>
+                                <span>{message.content}</span>
+                            </div>
+                        );
+                    })}                
             </section>
         );
     }
