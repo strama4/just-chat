@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
 import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList.js';
 import MessageList from './components/MessageList.js';
-import Landing from './components/Landing.js';
 import User from './components/User.js';
 
 import {
@@ -41,8 +39,10 @@ class App extends Component {
 
         this.state = {
           currentRoom: '',
-          user: 'Guest'
-        }
+          user: {username: 'Guest',
+                displayName: 'Guest'
+            }
+        };
     }
 
     setCurrentRoom = (room) => {
@@ -50,10 +50,8 @@ class App extends Component {
     }
 
     setUser = (user) => {
-        this.setState({ user: user})
-        
+        this.setState({ user: user});
     }
-
 
     render() {
         return (
@@ -66,7 +64,10 @@ class App extends Component {
                         user={this.state.user}/>
                     <RoomList firebase={firebase} setCurrentRoom={this.setCurrentRoom}/>
                 </Drawer>
-                <MessageList firebase={firebase} currentRoom={this.state.currentRoom} />
+                <MessageList 
+                    firebase={firebase} 
+                    currentRoom={this.state.currentRoom}
+                    currentUser={this.state.user}     />
             </div>
         );
     }
