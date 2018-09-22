@@ -1,16 +1,34 @@
 @import url(https://unpkg.com/material-components-web@0.39.3/dist/material-components-web.min.css);
 
+
+
 .username {
     font-weight: bold;
-  }
+}
 
-.left-align {
-    align-content: left;
-    padding: 0;
-    margin: 0;
+.center-align {
+    width: 80%;
+    margin: 5% 10% 5% 10%;
 }
 
 .margin {
     margin: 5px;
+} 
+
+.author-time {
+    display: flex;
+    justify-content: space-between;
 }
 
+.message-item {
+    margin-left: 1%;
+    padding-bottom: 1%;
+}
+
+.message-item:hover {
+    background-color: #acababbb;
+}
+
+.time-sent {
+    font-size: 12px;
+}

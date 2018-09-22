@@ -31,10 +31,10 @@ class RoomList extends Component {
 
     render() {
         return (
-            <section>
+            <section className="nav-bar">
                 <nav className="rooms-list">
                     {this.state.rooms.map((room) => {
-                        return <div key={room.key} onClick={() => this.props.setCurrentRoom(room)}><p>{room.name}</p></div>
+                        return <div key={room.key} onClick={() => this.props.setCurrentRoom(room)}><button className="mdc-button">{room.name}</button></div>
                     })                 
                     }
                 </nav>

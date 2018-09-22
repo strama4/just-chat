@@ -58,10 +58,9 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                
-                <Grid>
-                    <GridCell span="2">
+            <div className="App mdc-layout-grid">
+                <div className="mdc-layout-grid__inner">
+                    <div className="mdc-layout-grid__cell--span-4">
                         <Drawer>
                             <User 
                                 firebase={firebase} 
@@ -70,15 +69,15 @@ class App extends Component {
                                 user={this.state.user}/>
                             <RoomList firebase={firebase} setCurrentRoom={this.setCurrentRoom}/>
                         </Drawer>
-                    </GridCell>
-                    <GridCell className="chat-room" span="8">
+                    </div>
+                    <div className="mdc-layout-grid__cell--span-6">
                         <MessageList 
                             firebase={firebase} 
                             currentRoom={this.state.currentRoom}
                             currentUser={this.state.user}     />
-                    </GridCell>
-                    <GridCell span="2"></GridCell>
-                </Grid>
+                    </div>
+                    <div className="mdc-layout-grid__cell-span-2"></div>
+                </div>
             </div>
         );
     }

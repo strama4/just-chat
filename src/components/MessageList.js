@@ -47,29 +47,39 @@ class MessageList extends Component {
         newMessage.value = "";
     }
 
+    getTimeStamp = (time) => {
+        const moment = require('moment');
+        moment().format();
+        const timeSent = moment(time);
+        return moment(timeSent).fromNow();
+    }
+
     render() {
         const currentRoomKey = this.props.currentRoom.key;
         const filteredMessages = this.state.messages.filter(message => message.roomId === currentRoomKey);
 
         return (
-            <List twoLine id="messages-list">
+            <div>
+                <ul className="mdc-list mdc-list--two-line">
                     <h2>{this.props.currentRoom.name}</h2>
                     {filteredMessages.map((message) => {
                         return (
-                            <ListItem key={this.state.messages.indexOf(message)}>
-                                <ListItemText>
-                                    <ListItemPrimaryText className="username left-align">{message.username}:</ListItemPrimaryText>
-                                    <ListItemSecondaryText className="left-align">{message.content}</ListItemSecondaryText>
-                                </ListItemText>
-                            </ListItem>
+                            <li className="message-item" key={this.state.messages.indexOf(message)}> 
+                                <span className="mdc-list-item__text">
+                                    <span className="author-time"><span className="username">{message.username}:</span><span className="time-sent">{this.getTimeStamp(message.sentAt)}</span></span>
+                                    <span className="mdc-list-item__secondary-text">{message.content}</span>
+                                </span>
+                            </li>
                             
                         );
-                    })}
-                    <form id="message-input-form" onSubmit={(e) => this.composeMessage(e)} className="margin">
-                        <TextField fullwidth id="message-content" placeholder="Type your message..."/>
-                        <input className="mdc-button" type="submit" value="Send" />
-                    </form>                
-            </List>
+                    })}         
+                </ul>
+                <form id="message-input-form" onSubmit={(e) => this.composeMessage(e)} className="margin">
+                    <TextField fullwidth id="message-content" placeholder="Type your message..."/>
+                    <input className="mdc-button" type="submit" value="Send" />
+                </form>     
+            </div>
+            
         );
     }
 }
