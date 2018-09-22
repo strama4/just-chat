@@ -18,8 +18,11 @@ import {
     ListItemPrimaryText
 } from '@rmwc/list';
 
+import { Grid, GridCell, GridInner } from '@rmwc/grid';
+
 import '@material/drawer/dist/mdc.drawer.css';
 import '@material/list/dist/mdc.list.css';
+import '@material/layout-grid/dist/mdc.layout-grid.css';
 
 // Initialize Firebase
 var config = {
@@ -56,18 +59,26 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Drawer>
-                    <User 
-                        firebase={firebase} 
-                        handleUserButtonClick={this.handleUserButtonClick} 
-                        setUser={this.setUser}
-                        user={this.state.user}/>
-                    <RoomList firebase={firebase} setCurrentRoom={this.setCurrentRoom}/>
-                </Drawer>
-                <MessageList 
-                    firebase={firebase} 
-                    currentRoom={this.state.currentRoom}
-                    currentUser={this.state.user}     />
+                
+                <Grid>
+                    <GridCell span="2">
+                        <Drawer>
+                            <User 
+                                firebase={firebase} 
+                                handleUserButtonClick={this.handleUserButtonClick} 
+                                setUser={this.setUser}
+                                user={this.state.user}/>
+                            <RoomList firebase={firebase} setCurrentRoom={this.setCurrentRoom}/>
+                        </Drawer>
+                    </GridCell>
+                    <GridCell className="chat-room" span="8">
+                        <MessageList 
+                            firebase={firebase} 
+                            currentRoom={this.state.currentRoom}
+                            currentUser={this.state.user}     />
+                    </GridCell>
+                    <GridCell span="2"></GridCell>
+                </Grid>
             </div>
         );
     }

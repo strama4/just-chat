@@ -1,0 +1,16 @@
+@import url(https://unpkg.com/material-components-web@0.39.3/dist/material-components-web.min.css);
+
+.username {
+    font-weight: bold;
+  }
+
+.left-align {
+    align-content: left;
+    padding: 0;
+    margin: 0;
+}
+
+.margin {
+    margin: 5px;
+}
+

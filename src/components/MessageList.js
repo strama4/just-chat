@@ -1,4 +1,20 @@
 import React, {Component} from 'react';
+import './styles.css';
+import { TextField, TextFieldIcon, TextFieldHelperText } from '@rmwc/textfield';
+
+import {
+    List,
+    ListItem,
+    ListItemText,
+    ListItemPrimaryText,
+    ListItemSecondaryText
+} from '@rmwc/list';
+
+import '@material/list/dist/mdc.list.css';
+import '@material/textfield/dist/mdc.textfield.css';
+import '@material/floating-label/dist/mdc.floating-label.css';
+import '@material/notched-outline/dist/mdc.notched-outline.css';
+import '@material/line-ripple/dist/mdc.line-ripple.css';
 
 class MessageList extends Component {
     constructor(props) {
@@ -33,25 +49,27 @@ class MessageList extends Component {
 
     render() {
         const currentRoomKey = this.props.currentRoom.key;
-        const filteredMessages = this.state.messages.filter(message => message.roomId == currentRoomKey);
+        const filteredMessages = this.state.messages.filter(message => message.roomId === currentRoomKey);
 
         return (
-            <section id="messages-list">
+            <List twoLine id="messages-list">
                     <h2>{this.props.currentRoom.name}</h2>
                     {filteredMessages.map((message) => {
                         return (
-                                <div key={this.state.messages.indexOf(message)}>
-                                    <h3>{message.username}:</h3>
-                                    <span>{message.content}</span>
-                                </div>
+                            <ListItem key={this.state.messages.indexOf(message)}>
+                                <ListItemText>
+                                    <ListItemPrimaryText className="username left-align">{message.username}:</ListItemPrimaryText>
+                                    <ListItemSecondaryText className="left-align">{message.content}</ListItemSecondaryText>
+                                </ListItemText>
+                            </ListItem>
                             
                         );
                     })}
-                    <form id="message-input-form" onSubmit={(e) => this.composeMessage(e)}>
-                        <input id="message-content" type="text" placeholder="Type your message..." />
-                        <input type="submit" value="Send" />
+                    <form id="message-input-form" onSubmit={(e) => this.composeMessage(e)} className="margin">
+                        <TextField fullwidth id="message-content" placeholder="Type your message..."/>
+                        <input className="mdc-button" type="submit" value="Send" />
                     </form>                
-            </section>
+            </List>
         );
     }
 }

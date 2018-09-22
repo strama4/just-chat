@@ -26,3 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+GridCell {
+  width: 50%;
+  height: auto;
+}
+
+Drawer {
+  width: 25%;
+  height: auto;
+}

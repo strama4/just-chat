@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material/button": "^0.39.3",
     "@rmwc/drawer": "^2.1.3",
+    "@rmwc/grid": "^2.2.0",
     "@rmwc/list": "^2.1.3",
+    "@rmwc/textfield": "^2.2.2",
     "firebase": "^5.5.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",

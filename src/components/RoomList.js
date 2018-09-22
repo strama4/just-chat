@@ -43,7 +43,7 @@ class RoomList extends Component {
                     <label>
                         <p>Enter a room name:</p>
                         <input id="room-name" type="text" />
-                        <input type="submit" value="Create" />
+                        <input type="submit" value="Create" className="mdc-button"/>
                     </label>
                 </form>    
             </section>
