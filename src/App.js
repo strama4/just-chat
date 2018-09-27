@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './reset.css';
+import './components/styles.css'
 import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList.js';
@@ -60,8 +62,8 @@ class App extends Component {
         return (
             <div className="App mdc-layout-grid">
                 <div className="mdc-layout-grid__inner">
-                    <div className="mdc-layout-grid__cell--span-4">
-                        <Drawer>
+                    <div className="mdc-layout-grid__cell--span-4 ">
+                        <Drawer className="drawer">
                             <User 
                                 firebase={firebase} 
                                 handleUserButtonClick={this.handleUserButtonClick} 

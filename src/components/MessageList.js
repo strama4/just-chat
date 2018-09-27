@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './reset.css';
 import './styles.css';
 import { TextField, TextFieldIcon, TextFieldHelperText } from '@rmwc/textfield';
 
@@ -59,7 +60,7 @@ class MessageList extends Component {
         const filteredMessages = this.state.messages.filter(message => message.roomId === currentRoomKey);
 
         return (
-            <div>
+            <div class="chat-area">
                 <ul className="mdc-list mdc-list--two-line">
                     <h2>{this.props.currentRoom.name}</h2>
                     {filteredMessages.map((message) => {

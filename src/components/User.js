@@ -29,8 +29,8 @@ class User extends Component {
 
     render() {        
         return (
-            <div>
-                <h3>You are signed in as {this.props.user.username === 'Guest' ? "Guest" : this.props.user.displayName}.</h3>
+            <div className="user">
+                <h2>You are signed in as {this.props.user.username === 'Guest' ? "Guest" : this.props.user.displayName}.</h2>
                 <button className="mdc-button--outlined center-align" onClick={this.props.user.username === 'Guest' ? this.signIn : this.signOut}>{this.props.user.username === 'Guest' ? "Sign In" : "Sign Out"}</button>               
                 
             </div>

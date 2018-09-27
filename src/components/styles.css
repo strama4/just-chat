@@ -1,9 +1,35 @@
 @import url(https://unpkg.com/material-components-web@0.39.3/dist/material-components-web.min.css);
 
+html {
+    font-size: 20px;
+  }
 
+.form {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.form h2 {
+    font-size: 2rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.form h4 {
+    font-size: 1.2rem;
+    padding-bottom: .5rem;
+}
+
+div.user {
+    text-align: center;
+}
 
 .username {
     font-weight: bold;
+}
+
+.rooms-list {
+    text-align: center;
 }
 
 .center-align {
@@ -12,7 +38,7 @@
 }
 
 .margin {
-    margin: 5px;
+    margin-left: 0.4rem;
 } 
 
 .author-time {
@@ -21,8 +47,8 @@
 }
 
 .message-item {
-    margin-left: 1%;
-    padding-bottom: 1%;
+    margin-left: 0.4rem;
+    padding-bottom: 0.4rem;
 }
 
 .message-item:hover {
@@ -30,5 +56,22 @@
 }
 
 .time-sent {
-    font-size: 12px;
+    font-size: 0.8rem;
+}
+
+.rooms-list div {
+    font-size: 1.8rem;
+}
+
+div.chat-area  h2 {
+    font-size: 1.6rem;
+    padding-bottom: 0.8rem;
+}
+
+.nav-bar > .rooms-list {
+    font-size: 1.4rem;
+  }
+
+.user h2 {
+    font-size: 1.6rem;
 }

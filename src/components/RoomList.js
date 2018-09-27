@@ -38,10 +38,10 @@ class RoomList extends Component {
                     })                 
                     }
                 </nav>
-                <form id="create-room" onSubmit={this.createRoom}>
-                    <h1>Create Room</h1>
+                <form id="create-room" onSubmit={this.createRoom} className="form">
+                    <h2>Create Room</h2>
                     <label>
-                        <p>Enter a room name:</p>
+                        <h4>Enter a room name:</h4>
                         <input id="room-name" type="text" />
                         <input type="submit" value="Create" className="mdc-button"/>
                     </label>
