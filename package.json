@@ -10,6 +10,7 @@
     "@rmwc/list": "^2.1.3",
     "@rmwc/textfield": "^2.2.2",
     "firebase": "^5.5.0",
+    "merge": "^1.2.1",
     "moment": "^2.22.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",

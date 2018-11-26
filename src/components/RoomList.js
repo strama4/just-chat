@@ -33,6 +33,7 @@ class RoomList extends Component {
         return (
             <section className="nav-bar">
                 <nav className="rooms-list">
+                    {console.log(this.roomsRef)}
                     {this.state.rooms.map((room) => {
                         return <div key={room.key} onClick={() => this.props.setCurrentRoom(room)}><button className="mdc-button">{room.name}</button></div>
                     })                 
