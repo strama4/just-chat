@@ -8,3 +8,5 @@ Technologies/libraries used:
 - MomentJS 
 - Material Design
 - Google Firebase
+
+<a href="https://strama-justchat.herokuapp.com/">See Project</a>
